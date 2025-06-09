@@ -1,0 +1,128 @@
+html, body {
+    min-height: 100%;
+    background: greenyellow;
+}
+
+body {
+    height: 100vh;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+#login-page {
+    .row {
+        height: 100vh;
+        padding: 10rem 25rem;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        h1 {
+            font-weight: bolder;
+            font-size: 5rem;
+        }
+        h2 {
+            padding: 1rem;
+        }
+        .form-group {
+            align-items: center;
+        }
+        input, button {
+            width: 45%;
+            justify-self: center;
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+#main-page {
+    nav {  
+        padding: 1rem;
+        ul {
+            flex: 1;
+        }
+        #userWelcome {
+            color: white;
+        }
+    }
+    .container {
+        .row {
+            padding: 1rem;
+            .jugadores {
+                #btn-limpiar {
+                    margin-top: 1rem;
+                    justify-self: center;
+                }
+            }
+            .mensajes {
+                padding: 2.5rem 2.5rem 0 2.5rem;
+                text-align: center;
+            }
+        }
+        .reiniciar-juego {
+            justify-content: center;
+            #btn-reiniciar {
+                width: 50%;
+            }
+        }
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        .form-nombre {
+            display: inline-flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            button {
+                margin-left: 1rem;
+            }
+        }
+    }
+    #tablero {
+        width: 50%;
+        height: 50%;
+        text-align: center;
+            display: grid;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+        color: black;        
+        overflow: hidden;
+    }
+    .celda {
+        width: 70px;
+        height: 70px;
+        font-size: 3rem;
+        display: grid;
+        place-items: center;
+        border: 1px solid black;
+        float: left;
+    }
+}
+
+/* Animación encontrada en internet, quería probarla */
+
+.confetti {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  top: 0;
+  left: 50%;
+  animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
