@@ -22,7 +22,11 @@ btnIngresar.addEventListener("click", () => {
         login(nombreIngresado);
     } else {
         playSound("userVacioAudio");
-        window.alert("¡El nombre de usuario no puede estar vacío!");
+        Swal.fire({
+  icon: 'warning',
+  title: '¡Advertencia!',
+  text: '¡El nombre de usuario no puede estar vacío!',
+});
     }
 });
 
@@ -58,7 +62,7 @@ function login(nombreIngresado) {
     };
     if (usuarios.length === 0) {
         usuarios.push(usuarioActual);
-        localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        setItem("usuarios", JSON.stringify(usuarios));
     } else {
         const usuarioGuardado = usuarios.filter(u => u.user === usuarioActual.user);
         usuarioActual.victorias = usuarioGuardado.victorias;
@@ -69,6 +73,7 @@ function login(nombreIngresado) {
     actualizarMenu();
 }
 
+
 function actualizarMenu() {
     const userMenu = document.getElementById("userMenu");
     if (userMenu) {
@@ -77,8 +82,13 @@ function actualizarMenu() {
     }
 }
 
+
 function reiniciarEstadisticas() {
-    alert("En construcción!!!");
+    Swal.fire({
+  icon: 'warning',
+  title: '¡Advertencia!',
+  text: '¡El nombre de usuario no puede estar vacío!',
+});
     localStorage.clear();
 }
 
@@ -86,6 +96,7 @@ function logout() {
     sessionStorage.removeItem("user");
     location.reload();
 }
+
 
 /* Formulario Jugadores */
 const idBtnSorpresa1 = "btn-sorpresa-1";
@@ -139,6 +150,9 @@ function revisarJugadores() {
 
 function jugada(e) {
     revisarJugadores();
+    if (partidaGanada) {
+        return;
+    }
     if (e.target.innerHTML.trim() === ""){
         let msjTurno = document.getElementById("turno");
         if(esTurnoDeX){
@@ -154,6 +168,7 @@ function jugada(e) {
     revisarSiGano();
 }
 
+let partidaGanada = false;
 function revisarSiGano() {
     const opcionesGanador = [[0,1,2], [3,4,5], [6,7,8], [0,3,6],[1,4,7], [2,5,8], [0,4,8], [6,4,2]]; // posiciones ganadoras
     for (let i = 0; i < opcionesGanador.length; i++) {
@@ -173,6 +188,7 @@ function evaluarOpcion(posicionesAEvaluar) {
     }
     if (celdas[posicionesAEvaluar[0]].innerHTML === celdas[posicionesAEvaluar[1]].innerHTML &&
         celdas[posicionesAEvaluar[1]].innerHTML === celdas[posicionesAEvaluar[2]].innerHTML) {
+            partidaGanada = true;
             return true;
         }
         return false;
@@ -187,7 +203,9 @@ function mostrarMensajeGanador(jugador) {
     document.getElementById('turno').innerHTML = msjGanador;
 }
 
+
 function reiniciarJuego() {
+    partidaGanada = false;
     document.getElementById('turno').innerHTML = "Haz click en cualquier parte del tablero para iniciar";
     for (let i = 0; i < celdas.length; i++){
         celdas[i].innerHTML = "";
