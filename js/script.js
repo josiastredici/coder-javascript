@@ -62,7 +62,7 @@ function login(nombreIngresado) {
     };
     if (usuarios.length === 0) {
         usuarios.push(usuarioActual);
-        setItem("usuarios", JSON.stringify(usuarios));
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
     } else {
         const usuarioGuardado = usuarios.filter(u => u.user === usuarioActual.user);
         usuarioActual.victorias = usuarioGuardado.victorias;
