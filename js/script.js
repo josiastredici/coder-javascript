@@ -85,9 +85,9 @@ function actualizarMenu() {
 
 function reiniciarEstadisticas() {
     Swal.fire({
-  icon: 'warning',
-  title: '¡Advertencia!',
-  text: '¡El nombre de usuario no puede estar vacío!',
+  icon: 'error',
+  title: '¡Ups!',
+  text: '¡En construcción!',
 });
     localStorage.clear();
 }
