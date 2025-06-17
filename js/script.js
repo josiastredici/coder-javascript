@@ -62,7 +62,7 @@ function login(nombreIngresado) {
     };
     if (usuarios.length === 0) {
         usuarios.push(usuarioActual);
-        setItem("usuarios", JSON.stringify(usuarios));
+        localStorage.setItem("usuarios", JSON.stringify(usuarios));
     } else {
         const usuarioGuardado = usuarios.filter(u => u.user === usuarioActual.user);
         usuarioActual.victorias = usuarioGuardado.victorias;
@@ -85,9 +85,9 @@ function actualizarMenu() {
 
 function reiniciarEstadisticas() {
     Swal.fire({
-  icon: 'warning',
-  title: '¡Advertencia!',
-  text: '¡El nombre de usuario no puede estar vacío!',
+  icon: 'error',
+  title: '¡Ups!',
+  text: '¡En construcción!',
 });
     localStorage.clear();
 }
