@@ -12,101 +12,112 @@ body {
 }
 
 #login-page {
-    .row {
-        height: 100vh;
-        padding: 10rem 25rem;
-        display: flex;
-        flex-wrap: wrap;
-        text-align: center;
-        align-content: center;
-        justify-content: center;
-        h1 {
-            font-weight: bolder;
-            font-size: 5rem;
-        }
-        h2 {
-            padding: 1rem;
-        }
-        .form-group {
-            align-items: center;
-        }
-        input, button {
-            width: 45%;
-            justify-self: center;
-            margin-bottom: 0.5rem;
-        }
-    }
+    
 }
 
-#main-page {
-    nav {  
-        padding: 1rem;
-        ul {
-            flex: 1;
-        }
-        #userWelcome {
-            color: white;
-        }
-    }
-    .container {
-        .row {
-            padding: 1rem;
-            .jugadores {
-                #btn-limpiar {
-                    margin-top: 1rem;
-                    justify-self: center;
-                }
-            }
-            .mensajes {
-                padding: 2.5rem 2.5rem 0 2.5rem;
-                text-align: center;
-            }
-        }
-        .reiniciar-juego {
-            justify-content: center;
-            #btn-reiniciar {
-                width: 50%;
-            }
-        }
-    }
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        .form-nombre {
-            display: inline-flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            button {
-                margin-left: 1rem;
-            }
-        }
-    }
-    #tablero {
-        width: 50%;
-        height: 50%;
-        text-align: center;
-            display: grid;
-        place-items: center;
-        width: 100%;
-        height: 100%;
-        color: black;        
-        overflow: hidden;
-    }
-    .celda {
-        width: 70px;
-        height: 70px;
-        font-size: 3rem;
-        display: grid;
-        place-items: center;
-        border: 1px solid black;
-        float: left;
-    }
+#login-page .row {
+    height: 100vh;
+    padding: 10rem 25rem;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
 }
 
-/* Animación encontrada en internet, quería probarla */
+#login-page .row h1 {
+    font-weight: bolder;
+    font-size: 5rem;
+}
+
+#login-page .row h2 {
+    padding: 1rem;
+}
+
+#login-page .form-group {
+    align-items: center;
+}
+
+#login-page input,
+#login-page button {
+    width: 45%;
+    justify-self: center;
+    margin-bottom: 0.5rem;
+}
+
+#main-page nav {
+    padding: 1rem;
+}
+
+#main-page nav ul {
+    flex: 1;
+}
+
+#main-page #userWelcome {
+    color: white;
+}
+
+#main-page .container .row {
+    padding: 1rem;
+}
+
+#main-page .container .row .jugadores #btn-limpiar {
+    margin-top: 1rem;
+    justify-self: center;
+}
+
+#main-page .container .row .mensajes {
+    padding: 2.5rem 2.5rem 0 2.5rem;
+    text-align: center;
+}
+
+#main-page .reiniciar-juego {
+    justify-content: center;
+}
+
+#main-page .reiniciar-juego #btn-reiniciar {
+    width: 50%;
+}
+
+#main-page .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+#main-page .form-group .form-nombre {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#main-page .form-group .form-nombre button {
+    margin-left: 1rem;
+}
+
+#main-page #tablero {
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    color: black;        
+    overflow: hidden;
+}
+
+#main-page .celda {
+    width: 70px;
+    height: 70px;
+    font-size: 3rem;
+    display: grid;
+    place-items: center;
+    border: 1px solid black;
+    float: left;
+}
 
 .confetti {
   position: fixed;
@@ -125,4 +136,20 @@ body {
   100% {
     transform: translateY(100vh) rotate(360deg);
   }
+}
+#info-top {
+  position: absolute;
+  top: 5rem; 
+  right: 2rem;
+  text-align: right;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.75);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+#hora-local, #clima {
+  margin-bottom: 0.25rem;
+  font-weight: 500;
 }
